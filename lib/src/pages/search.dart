@@ -29,7 +29,6 @@ class _SearchState extends State<Search> {
       groupBox[g1].add(size);
       groupIndex[g1] += size;
     }
-    print(groupBox);
     super.initState();
   }
 

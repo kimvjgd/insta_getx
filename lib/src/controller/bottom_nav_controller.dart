@@ -36,7 +36,6 @@ class BottomNavController extends GetxController {
       bottomHistory.remove(value);
     }
     bottomHistory.add(value);
-    print(bottomHistory);
   }
 
   Future<bool> willPopAction() async {
@@ -63,7 +62,6 @@ class BottomNavController extends GetxController {
       bottomHistory.removeLast();
       var index = bottomHistory.last;
       changeBottomNav(index, hasGesture: false);
-      print(bottomHistory);
       return false;
     }
   }

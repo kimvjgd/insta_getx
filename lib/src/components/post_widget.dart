@@ -94,7 +94,6 @@ class PostWidget extends StatelessWidget {
             prefixText: '동동이',
             prefixStyle: TextStyle(fontWeight: FontWeight.bold),
             onPrefixTap: () {
-              print('동동이 채널로 이동');
             },
             maxLines: 3,
           )

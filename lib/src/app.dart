@@ -4,6 +4,7 @@ import 'package:insta_getx/src/components/image_data.dart';
 import 'package:insta_getx/src/controller/bottom_nav_controller.dart';
 import 'package:insta_getx/src/pages/home.dart';
 import 'package:insta_getx/src/pages/search.dart';
+import 'package:insta_getx/src/pages/upload.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class App extends GetView<BottomNavController> {
                   return MaterialPageRoute(builder: (context)=> const Search());
                 },
               ),
-              Container(child: Center(child: Text('Upload'))),
+              Upload(),
               Container(child: Center(child: Text('Activity'))),
               Container(child: Center(child: Text('My Page'))),
             ],
