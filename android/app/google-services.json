@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1047065258594",
+    "project_id": "instagetx",
+    "storage_bucket": "instagetx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047065258594:android:34cdc4fc2d8db84afaff3b",
+        "android_client_info": {
+          "package_name": "com.dongpakka.insta_getx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047065258594-0kkvmdh9c38o71vu9d6ka0hfvftbotsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dongpakka.insta_getx",
+            "certificate_hash": "fe806dfb5ea8120ef25d8b7255b6a21d5612eaa8"
+          }
+        },
+        {
+          "client_id": "1047065258594-t7gglame450qh9j0sbv57b04cr47mn35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZhM9LJi9LGsUkMJk58cBgrJSNAggpiQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047065258594-t7gglame450qh9j0sbv57b04cr47mn35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
