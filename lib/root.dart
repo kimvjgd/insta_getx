@@ -14,11 +14,11 @@ class Root extends GetView<AuthController> {
   Widget build(BuildContext context) {
     return StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (BuildContext context, AsyncSnapshot<User?> user) {
+        builder: (BuildContext context, AsyncSnapshot<User?> user) {    // FirebaseAuth_uid
           if (user.hasData) {
             return FutureBuilder<IUser?>(
                 future: controller.loginUser(user.data!.uid),
-                builder: (context, snapshot) {
+                builder: (context, snapshot) {                // auth_uid와 같은 uid가 user collection안에 있으면 그 IUser, 없으면 snapshot==null
                   if (snapshot.hasData) {
                     return App();
                   } else {
@@ -27,7 +27,6 @@ class Root extends GetView<AuthController> {
                         : SignupPage(uid: user.data!.uid));
                   }
                 });
-            return const App();
           } else {
             return const Login();
           }

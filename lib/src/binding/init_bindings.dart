@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:insta_getx/src/components/upload_controller.dart';
 import 'package:insta_getx/src/controller/auth_controller.dart';
 import 'package:insta_getx/src/controller/bottom_nav_controller.dart';
 import 'package:insta_getx/src/controller/mypage_controller.dart';
