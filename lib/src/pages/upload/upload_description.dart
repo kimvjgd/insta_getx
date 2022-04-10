@@ -19,10 +19,11 @@ class UploadDescription extends GetView<UploadController> {
               fit: BoxFit.cover,
             ),
           ),
-          const Expanded(
+          Expanded(
               child: TextField(
+                controller: controller.textEditingController,
             maxLines: null,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -99,7 +100,7 @@ class UploadDescription extends GetView<UploadController> {
           ),
           actions: [
             GestureDetector(
-              onTap: () {},
+              onTap: controller.uploadPost,
               child: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: ImageData(

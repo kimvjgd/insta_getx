@@ -16,8 +16,8 @@ class MypageController extends GetxController with GetTickerProviderStateMixin{
   }
 
   void setTargetUser(){
-    var uid = Get.parameters['targetUid'];
-    if(uid==null){
+    var uid = Get.parameters['targetUid'];      // 다른 사람일때 parameter로 targetUid를 보내서 볼 수 있다.
+    if(uid==null){                              // uid가 없으면 내 페이지이다.
       targetUser(AuthController.to.user.value);
     }else {
       //TODO 상대 uid로 users collection 조회
@@ -30,3 +30,4 @@ class MypageController extends GetxController with GetTickerProviderStateMixin{
     setTargetUser();
   }
 }
+

@@ -1,11 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:insta_getx/model/post.dart';
 import 'package:insta_getx/src/components/avatar_widget.dart';
 import 'package:insta_getx/src/components/image_data.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class PostWidget extends StatelessWidget {
-  PostWidget({Key? key}) : super(key: key);
+  final Post post;
+  PostWidget({Key? key, required this.post}) : super(key: key);
 
   Widget _header() {
     return Padding(
@@ -16,9 +19,9 @@ class PostWidget extends StatelessWidget {
           AvatarWidget(
               type: AvatarType.TYPE3,
               size: 40,
-              nickname: 'dongdong',
+              nickname: post.userInfo!.nickname,
               thumbPath:
-              'https://static.remove.bg/remove-bg-web/59c96072ccf69a79c0e6dd85a2eac05ceb4d0784/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png'),
+              post.userInfo!.thumbnail!),
           GestureDetector(
             onTap: () {},
             child: Padding(
@@ -37,7 +40,7 @@ class PostWidget extends StatelessWidget {
   Widget _image() {
     return CachedNetworkImage(
         imageUrl:
-        'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg');
+        post.thumbnail!);
   }
 
   Widget _infoCount() {
@@ -84,14 +87,14 @@ class PostWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            '좋아요 150개',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            '좋아요 ${post.likeCount??0}개',
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           ExpandableText(
-            '콘텐츠 1입니다.\n콘텐츠 1입니다.\n콘텐츠 1입니다.\n콘텐츠 1입니다.\n',
+            post.description??'',
             expandText: '더보기',
             collapseText: '접기',
-            prefixText: '동동이',
+            prefixText: post.userInfo!.nickname,
             prefixStyle: TextStyle(fontWeight: FontWeight.bold),
             onPrefixTap: () {
             },
@@ -116,8 +119,8 @@ class PostWidget extends StatelessWidget {
   }
 
   Widget _dateAgo() {
-    return const Padding(padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        child: Text('1일전', style: TextStyle(color: Colors.grey, fontSize: 11)));
+    return  Padding(padding:  EdgeInsets.symmetric(horizontal: 15.0),
+        child: Text(timeago.format(post.createdAt!), style: TextStyle(color: Colors.grey, fontSize: 11)));
   }
 
   @override
